@@ -4,7 +4,7 @@ One command for setting up a usable copy of Vim on your new machine.
 ## Installing Vim via Vimvim
 Running this command should install a usable copy of Vim:  
 ```
-curl -s https://raw.githubusercontent.com/abdelhai/vimvim/master/vimvim.py | sudo python -
+curl -s https://raw.githubusercontent.com/abdelhai/vimvim/master/vimvim.py | sudo /usr/bin/python -
 ```
 
 ## Features:
