@@ -1,6 +1,7 @@
 import os
 import subprocess
-# from shutil import copyfile, copytree
+import urllib
+
 
 def find_file(path, filename):
     for root, dirs, files in os.walk(path):
@@ -28,6 +29,14 @@ def update_install(installed):
 
 def absolute_path(path=''):
     return os.path.expanduser('~') + '/' + path
+
+
+def download_repo_zip(url, dest):
+    urllib.urlretrieve(url, dest)
+
+
+def unzip_file():
+    pass
 
 
 def backup_vimrc():
