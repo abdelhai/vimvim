@@ -61,8 +61,8 @@ def main():
     backup_vimrc()
     backup_dotvim()
     download_repo_zip('https://github.com/abdelhai/vimvim/archive/master.zip', absolute_path('vimvim.zip'))
-    unzip_file(absolute_path('vimvim.zip', absolute_path('.vim'))
-    os.remove(absolute_path('vimvim.zip')
+    unzip_file(absolute_path('vimvim.zip'), absolute_path('.vim'))
+    os.remove(absolute_path('vimvim.zip'))
     subprocess.call('vim +PlugInstall +qall', shell=True)
 
 if __name__ == '__main__':
