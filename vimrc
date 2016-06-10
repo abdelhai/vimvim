@@ -86,6 +86,9 @@ set number
 " set VI no compatible to avoide side effects 
 set nocompatible
 
+" theme
+colorscheme desert
+
 " Mappings
 " Leader is Space
 let mapleader  = "\<Space>"
@@ -106,14 +109,4 @@ Plug 'https://github.com/tpope/vim-surround'
 " ctr+p for fuzzy file search
 Plug 'https://github.com/kien/ctrlp.vim.git'
 
-" tasty theme
-Plug 'https://github.com/nanotech/jellybeans.vim'
-
-
 call plug#end()
-
-" colorscheme
-set background=dark
-colorscheme jellybeans
-
-
