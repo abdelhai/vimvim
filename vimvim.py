@@ -1,7 +1,7 @@
 import os
 import subprocess
 import urllib
-
+import zipfile
 
 def find_file(path, filename):
     for root, dirs, files in os.walk(path):
@@ -35,8 +35,10 @@ def download_repo_zip(url, dest):
     urllib.urlretrieve(url, dest)
 
 
-def unzip_file():
-    pass
+def unzip_file(src, dest):
+    zipf = zipfile.ZipFile(src, 'r')
+    zipf.extractall(dest)
+    zipf.close()
 
 
 def backup_vimrc():
@@ -56,7 +58,8 @@ def main():
     update_install(installed)
     backup_vimrc()
     backup_dotvim()
-
+    download_repo_zip('https://github.com/abdelhai/vimvim/archive/master.zip', absolute_path('vimvim.zip'))
+    unzip_file(absolute_path('vimvim.zip', absolute_path('.vim'))
 
 if __name__ == '__main__':
     main()
