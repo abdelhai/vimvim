@@ -1,5 +1,8 @@
 # Vimvim
-One command for setting up a usable copy of Vim on your new machine.  
+Instantly awesome Vim on your new machine.  
+
+> Warning: The script wasn't tested thoroughly, don't use it on your main or production machine.  
+> Also, currently it only runs on Debian based distros.  
 
 ## Installing Vim via Vimvim
 Running this command should install a usable copy of Vim:  
@@ -10,10 +13,10 @@ curl -s https://raw.githubusercontent.com/abdelhai/vimvim/master/vimvim.py | sud
 ## Features:
 
 - Installing or aupdating existing Vim (terminal Vim).
-- Some kind of sane defaullts, like this [one](https://github.com/tpope/vim-sensible)
-- Installing [Plug](https://github.com/junegunn/vim-plug), the plugin manager.
-- Installing [ctrlp.vim](https://github.com/kien/ctrlp.vim) plugin
-- Putting a copy of some akind of [Cheat sheet](http://vim.rtorr.com/)
-- Suggestions?
+- Sane defaults,inspired by this [vimrc](https://github.com/tpope/vim-sensible).
+- Installs [Plug](https://github.com/junegunn/vim-plug), the plugin manager.
+- Installs [ctrlp.vim](https://github.com/kien/ctrlp.vim) plugin.
+- Installs [vim-commentary](https://github.com/tpope/vim-commentary) plugin.
+- Installs [vim-surround](https://github.com/tpope/vim-surround) plug.
 
 It should all be lightwight and fast.
