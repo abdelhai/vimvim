@@ -1,112 +1,56 @@
-" sensible.vim - Defaults everyone can agree on
-" Maintainer:   Tim Pope <http://tpo.pe/>
-" Version:      1.1
-" Modified by Mustafa Abdelhai <https://github.com/abdelhai>
+" Mustafa's .vimrc
 
-if has('autocmd')
-  filetype plugin indent on
-endif
-if has('syntax') && !exists('g:syntax_on')
-  syntax enable
-endif
+" vim-plug config
+set runtimepath+='~/.vim'
+call plug#begin('~/.vim/plugged')
 
-" Use :help 'option' to see the documentation for the given option.
+Plug 'https://github.com/w0ng/vim-hybrid'
 
-set autoindent
-set backspace=indent,eol,start
-set complete-=i
-set smarttab
+Plug 'https://github.com/kien/ctrlp.vim.git'
 
-set nrformats-=octal
+Plug 'elixir-lang/vim-elixir'
 
-set ttimeout
-set ttimeoutlen=100
+Plug 'https://github.com/slashmili/alchemist.vim'
 
-set incsearch
-" Use <C-L> to clear the highlighting of :set hlsearch.
-if maparg('<C-L>', 'n') ==# ''
-  nnoremap <silent> <C-L> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
-endif
+Plug 'https://github.com/othree/yajs.vim'
 
-set laststatus=2
-set ruler
-set wildmenu
+Plug 'itchyny/lightline.vim'
 
-if !&scrolloff
-  set scrolloff=1
-endif
-if !&sidescrolloff
-  set sidescrolloff=5
-endif
-set display+=lastline
+call plug#end()
 
-if &encoding ==# 'latin1' && has('gui_running')
-  set encoding=utf-8
-endif
+" key maps
+" map <C-n> :NERDTreeToggle<CR>
 
-if &listchars ==# 'eol:$'
-  set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
-endif
+" for powerline
+:set laststatus=2
 
-if v:version > 703 || v:version == 703 && has("patch541")
-  set formatoptions+=j " Delete comment character when joining commented lines
-endif
-
-if has('path_extra')
-  setglobal tags-=./tags tags-=./tags; tags^=./tags;
-endif
-
-if &shell =~# 'fish$'
-  set shell=/bin/bash
-endif
-
-set autoread
-
-if &history < 1000
-  set history=1000
-endif
-if &tabpagemax < 50
-  set tabpagemax=50
-endif
-if !empty(&viminfo)
-  set viminfo^=!
-endif
-set sessionoptions-=options
-
-" Allow color schemes to do bright colors without forcing bold.
-if &t_Co == 8 && $TERM !~# '^linux\|^Eterm'
-  set t_Co=16
-endif
-
-inoremap <C-U> <C-G>u<C-U>
-
-" show line numbers
-set number
+filetype plugin indent on
+set expandtab ts=2 sw=2 ai
 
 " set VI no compatible to avoide side effects 
 set nocompatible
 
-" theme
-colorscheme desert
+" leader
+let mapleader="\<Space>"
+" synthax on
+syntax enable
 
-" Mappings
-" Leader is Space
-let mapleader  = "\<Space>"
+" show line numbers
+set number
+set relativenumber
 
-" vim-plug config
-" see https://github.com/junegunn/vim-plug
-set runtimepath+='~/.vim'
-call plug#begin('~/.vim/plugged')
+" normal backspace.. jus copied it from example 
+set backspace=2
 
-" Visit the repos for more info.
+set mouse=a
 
-" use `gc` and `gcc` for commenting out.
-Plug 'https://github.com/tpope/vim-commentary'
+set listchars=eol:¬,nbsp:_,tab:→\ ,trail:~,extends:>,precedes:<,space:·
 
-" quoting/parenthesizing made simple
-Plug 'https://github.com/tpope/vim-surround'
+set list
+  
+" theme stuff
+set background=dark
+colorscheme hybrid 
 
-" ctr+p for fuzzy file search
-Plug 'https://github.com/kien/ctrlp.vim.git'
-
-call plug#end()
+" for ignoring files/folders
+set wildignore+=*/tmp/*,*/node_modules/*,*.so,*.swp,*.zip
